@@ -14,15 +14,20 @@
 }
 
 - (void)awakeFromNib { 
-    polygon = [[PolygonShape alloc] initWithNumberOfSides:numberOfSidesLabel.text.integerValue minimumNumberOfSides:3 maximumNumberOfSides:12];
+    // instantiate the polygon object and keep it around
+    polygon = [[PolygonShape alloc]
+               initWithNumberOfSides:numberOfSidesLabel.text.integerValue
+               minimumNumberOfSides:3
+               maximumNumberOfSides:12];
     [polygon retain];
-    NSLog(@"My polygon awoken from nib: %@", [polygon description]);
     [polygon autorelease];
+
+    NSLog(@"My polygon awoken from nib: %@", [polygon description]);
+
     [self updateInterface];
 }
 
 - (void)updateInterface { 
-    // set interface state here
     NSLog(@"Updating interface: determining increase / decrease button states.");
 
     // update number of sides
@@ -30,6 +35,8 @@
     increaseSidesButton.enabled = [polygon isValidMaximumNumberOfSides:(sides + 1)];
     decreaseSidesButton.enabled = [polygon isValidMinimumNumberOfSides:(sides - 1)];
     numberOfSidesLabel.text = [NSString stringWithFormat:@"%d", sides];
+
+    // update labels with information from the polygon
     degreesLabel.text = [NSString stringWithFormat:@"%d", (int) [polygon angleInDegrees]];
     radiansLabel.text = [NSString stringWithFormat:@"%.6f", [polygon angleInRadians]];
     minSidesLabel.text = [NSString stringWithFormat:@"%d", [polygon minimumNumberOfSides]];

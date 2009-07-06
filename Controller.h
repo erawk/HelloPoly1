@@ -5,6 +5,7 @@
 @interface Controller : NSObject {
     IBOutlet UIButton *decreaseSidesButton;
     IBOutlet UIButton *increaseSidesButton;
+
     IBOutlet UILabel *numberOfSidesLabel;
     IBOutlet UILabel *degreesLabel;
     IBOutlet UILabel *radiansLabel;

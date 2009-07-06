@@ -124,7 +124,7 @@
 - (NSString *)name {
     NSArray *shapeNames = [[NSArray alloc] initWithObjects: 
      @"Impossible", @"Monogan", @"Digon", @"Triangle", @"Rectangle", @"Pentagon", @"Hexagon", 
-     @"Heptagon", @"Octagon", @"Enneagon / Nonagon", @"Decagon", @"Hendagon", @"Dodecagon", nil];
+     @"Heptagon", @"Octagon", @"Nonagon", @"Decagon", @"Hendagon", @"Dodecagon", nil];
     [shapeNames autorelease];
 
     return [shapeNames objectAtIndex:(numberOfSides)];
