@@ -19,8 +19,6 @@
                initWithNumberOfSides:numberOfSidesLabel.text.integerValue
                minimumNumberOfSides:3
                maximumNumberOfSides:12];
-    [polygon retain];
-    [polygon autorelease];
 
     NSLog(@"My polygon awoken from nib: %@", [polygon description]);
 
